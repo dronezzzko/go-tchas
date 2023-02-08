@@ -32,17 +32,19 @@ var ps2 = &([]string{"Go"})[0]
 Looks wierd but valid:
 ```go
 type S []S
-type M map[int]M 
-type F func(F) F 
-type Ch chan Ch 
+type M map[int]M
+type F func(F) F
+type Ch chan Ch
 type P *P
 ```
 ```go
 package main
 
-func main() { type P *P
-  var pp = new(P) *pp = pp
-  _ = ************pp
+func main() {
+	type P *P
+	var pp = new(P)
+	*pp = pp
+	_ = ************pp
 }
 ```
 ```go
@@ -50,28 +52,27 @@ package main
 
 type F func() F
 
-func f() F { 
-  return f
+func f() F {
+	return f
 }
 
 func main() {
-  f()()()()()()()()()
+	f()()()()()()()()()
 }
-
 ```
 
 ### Copy slice without using ``copy()`` function
 Since Go 1.17 a slice can be copied in this way:
 ```go
-package main 
+package main
 
 const N = 128
 var x = []int{N-1: 789}
 
 func main() {
-  var y = make([]int, N)
-  *(*[N]int)(y) = *(*[N]int)(x) // the same as: copy(y, x) 
-  println(y[N-1]) // 789
+	var y = make([]int, N)
+	*(*[N]int)(y) = *(*[N]int)(x) // the same as: copy(y, x) 
+	println(y[N-1]) // 789
 }
 ```
 
