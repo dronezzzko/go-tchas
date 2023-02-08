@@ -90,3 +90,18 @@ func main() {
 	println(*(*[5]int)(x) == *(*[5]int)(z)) // false
 }
 ```
+
+### NaN!=NaN,Inf==Inf
+```go
+package main
+
+var a = 0.0
+var x = 1 / a // +Inf
+var y = x * a // NaN
+
+func main() {
+	println(x, y)   // +Inf NaN
+	println(x == x) // true
+	println(y == y) // false
+}
+```
