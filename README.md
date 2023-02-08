@@ -1,9 +1,9 @@
 # Go-tchas
 List of interesting gotchas in Go.
 
-1. [Undocumented Behaivoir](#undocumented-behaivoir)
+1. [Undocumented Behavior](#undocumented-behavior)
 
-## Undocumented Behaivoir
+## Undocumented Behavior
 ### Pointer of composite literals
 
 There is a way to create a pointer of composite literal without a helper function.
