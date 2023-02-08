@@ -42,7 +42,7 @@ package main
 
 func main() { type P *P
   var pp = new(P) *pp = pp
-_ = ************pp
+  _ = ************pp
 }
 ```
 ```go
@@ -53,6 +53,7 @@ type F func() F
 func f() F { 
   return f
 }
+
 func main() {
   f()()()()()()()()()
 }
