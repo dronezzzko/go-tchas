@@ -68,7 +68,7 @@ var x = []int{N-1: 789}
 
 func main() {
   var y = make([]int, N)
-  *(*[N]int)(y) = *(*[N]int)(x) // same as: copy(y, x) 
+  *(*[N]int)(y) = *(*[N]int)(x) // the same as: copy(y, x) 
   println(y[N-1]) // 789
 }
 ```
