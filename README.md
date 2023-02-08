@@ -4,6 +4,7 @@ List of interesting gotchas in Go.
 1. [Syntax](#syntax)
 
 ## Syntax
+### Pointer of composite literals
 
 There is a way to create a pointer of composite literal without a helper function.
 
