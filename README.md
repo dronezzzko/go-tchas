@@ -77,4 +77,15 @@ func main() {
 
 ### Comparable slices
 As we know in Go, slices are incomparable. Well... Since Go 1.17, if the elements of two slices are comparable and the lengths of the two slices are equal and known at coding time, then we could this:
+```go
+package main
 
+func main() {
+	var x = []int{1, 2, 3, 4, 5}
+	var y = []int{1, 2, 3, 4, 5}
+	var z = []int{1, 2, 3, 4, 9}
+
+	println(*(*[5]int)(x) == *(*[5]int)(y)) // true
+	println(*(*[5]int)(x) == *(*[5]int)(z)) // false
+}
+```
