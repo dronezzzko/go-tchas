@@ -59,7 +59,7 @@ func main() {
 
 ```
 
-## Copy slice without using ``copy()`` function
+### Copy slice without using ``copy()`` function
 Since Go 1.17 a slice can be copied in this way:
 ```go
 package main const N = 128
