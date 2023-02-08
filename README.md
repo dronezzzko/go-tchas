@@ -105,3 +105,19 @@ func main() {
 	println(y == y) // false
 }
 ```
+### bytes.Equal and reflect.DeepEqual different results
+```go
+package main
+
+import (
+	"bytes"
+	"reflect"
+)
+
+func main() {
+	var x = []byte{}
+	var y []byte
+	println(bytes.Equal(x, y))
+	println(reflect.DeepEqual(x, y)) // false
+}
+```
