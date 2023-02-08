@@ -37,7 +37,14 @@ type F func(F) F
 type Ch chan Ch 
 type P *P
 ```
+```go
+package main
 
+func main() { type P *P
+var pp = new(P) *pp = pp
+_ = ************pp
+}
+```
 ```go
 package main
 
