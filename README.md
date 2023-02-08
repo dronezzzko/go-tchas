@@ -1,9 +1,9 @@
 # Go-tchas
 List of interesting gotchas in Go.
 
-1. [Syntax](#syntax)
+1. [Undocumented Behaivoir](#undocumented-behaivoir)
 
-## Syntax
+## Undocumented Behaivoir
 ### Pointer of composite literals
 
 There is a way to create a pointer of composite literal without a helper function.
@@ -26,4 +26,28 @@ Or:
 var pb2 = &([]bool{true})[0]  
 var pi2 = &([]int{9})[0]
 var ps2 = &([]string{"Go"})[0]
+```
+
+### Loop types
+Looks wierd but valid:
+```go
+type S []S
+type M map[int]M 
+type F func(F) F 
+type Ch chan Ch 
+type P *P
+```
+
+```go
+package main
+
+type F func() F
+
+func f() F { 
+  return f
+}
+func main() {
+  f()()()()()()()()()
+}
+
 ```
