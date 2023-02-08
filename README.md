@@ -117,7 +117,7 @@ import (
 func main() {
 	var x = []byte{}
 	var y []byte
-	println(bytes.Equal(x, y))
+	println(bytes.Equal(x, y)) // true
 	println(reflect.DeepEqual(x, y)) // false
 }
 ```
