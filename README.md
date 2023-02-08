@@ -41,7 +41,7 @@ type P *P
 package main
 
 func main() { type P *P
-var pp = new(P) *pp = pp
+  var pp = new(P) *pp = pp
 _ = ************pp
 }
 ```
@@ -62,8 +62,9 @@ func main() {
 ### Copy slice without using ``copy()`` function
 Since Go 1.17 a slice can be copied in this way:
 ```go
-package main const N = 128
+package main 
 
+const N = 128
 var x = []int{N-1: 789}
 
 func main() {
