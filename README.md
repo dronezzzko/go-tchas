@@ -58,3 +58,17 @@ func main() {
 }
 
 ```
+
+## Copy slice without using ``copy()`` function
+Since Go 1.17 a slice can be copied in this way:
+```go
+package main const N = 128
+
+var x = []int{N-1: 789}
+
+func main() {
+  var y = make([]int, N)
+  *(*[N]int)(y) = *(*[N]int)(x) // same as: copy(y, x) 
+  println(y[N-1]) // 789
+}
+```
