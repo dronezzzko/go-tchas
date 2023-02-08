@@ -81,11 +81,12 @@ As we know in Go, slices are incomparable. Well... Since Go 1.17, if the element
 package main
 
 func main() {
-  var x = []int{1, 2, 3, 4, 5} 
-  var y = []int{1, 2, 3, 4, 5} 
-  var z = []int{1, 2, 3, 4, 9}
+	var x = []int{1, 2, 3, 4, 5}
+	var y = []int{1, 2, 3, 4, 5}
+	var z = []int{1, 2, 3, 4, 9}
 
-  println(*(*[5]int)(x) == *(*[5]int)(y)) // true 
-  println(*(*[5]int)(x) == *(*[5]int)(z)) // false
+	println(*(*[5]int)(x) == *(*[5]int)(y)) // true
+	println(*(*[5]int)(x) == *(*[5]int)(z)) // false
 }
+
 ```
