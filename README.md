@@ -105,7 +105,7 @@ func main() {
 	println(y == y) // false
 }
 ```
-### bytes.Equal and reflect.DeepEqual different results
+### bytes.Equal and reflect.DeepEqual give different results
 ```go
 package main
 
