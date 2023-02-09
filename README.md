@@ -4,7 +4,7 @@ List of interesting gotchas in Go.
 * [Dark Corners](#dark-corners)
     * [Pointer of composite literals](#pointer-of-composite-literals)
     * [Loop types](#loop-types)
-    * [Copy slice without using copy() function]()
+    * [Copy slice without using copy() function](#copy-slice-without-using-copy-function)
 
 ## Dark Corners
 ### Pointer of composite literals
