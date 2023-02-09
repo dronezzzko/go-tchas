@@ -91,7 +91,7 @@ func main() {
 }
 ```
 
-### NaN != NaN,Inf == Inf
+### NaN != NaN, Inf == Inf
 ```go
 package main
 
