@@ -15,7 +15,7 @@ var pi = &123
 var pb = &"abc"
 ```
 
-One-line "hacks" that actually work:
+One-line "hack" that actually works:
 ```go
 var pb = &(&[1]bool{true})[0] 
 var pi = &(&[1]int{9})[0]  
