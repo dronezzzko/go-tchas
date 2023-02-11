@@ -156,8 +156,8 @@ func BenchmarkRangeValueCopy(b *testing.B) {
 
 	b.Run("range_value_copy", func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
-			for _, hs := range bigSlice {
-				sum += hs.h
+			for _, v := range bigSlice {
+				sum += v.h
 			}
 		}
 	})
@@ -172,6 +172,7 @@ func BenchmarkRangeValueCopy(b *testing.B) {
 
 	_ = sum
 }
+
 ```
 Output:
 
