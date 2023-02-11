@@ -9,7 +9,7 @@ List of interesting gotchas in Go.
     * [NaN != NaN, Inf == Inf](#nan--nan-inf--inf)
     * [bytes.Equal and reflect.DeepEqual give different results](#bytesequal-and-reflectdeepequal-give-different-results)
 * [Performance](#performance)
-    * [for-rangeloop](#for-rangeloop)
+    * [for-rangeloop](#for-range-loop)
 
 ## Dark Corners
 ### Pointer of composite literals
@@ -130,4 +130,4 @@ func main() {
 }
 ```
 ## Performance
-### for-rangeloop
+### for-range loop
