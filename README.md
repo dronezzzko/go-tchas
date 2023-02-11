@@ -131,3 +131,49 @@ func main() {
 ```
 ## Performance
 ### for-range loop
+With each iteration of a slice, the address of a local variable is the same. Only value of the local variable is changing.
+Several examples below show the costs of copying some large values:
+```go
+package copybench
+
+import (
+	"testing"
+)
+
+type (
+	bigStruct struct {
+		h     uint64
+		cache [500]byte
+		body  []byte
+	}
+)
+
+func BenchmarkRangeValueCopy(b *testing.B) {
+	var sum uint64 = 0
+	var bigSlice = make([]bigStruct, 2000)
+	b.ResetTimer()
+
+	b.Run("range_value_copy", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			for _, hs := range bigSlice {
+				sum += hs.h
+			}
+		}
+	})
+
+	b.Run("range_value_index", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			for ii := range bigSlice {
+				sum += bigSlice[ii].h
+			}
+		}
+	})
+
+	_ = sum
+}
+```
+Output:
+```terminal
+BenchmarkRangeValueCopy/range_value_copy-8                 26079             43284 ns/op               0 B/op          0 allocs/op
+BenchmarkRangeValueCopy/range_value_index-8               488025              2453 ns/op               0 B/op          0 allocs/op
+```
