@@ -180,3 +180,4 @@ Output:
 BenchmarkRangeValueCopy/range_value_copy-8                 26079             43284 ns/op               0 B/op          0 allocs/op
 BenchmarkRangeValueCopy/range_value_index-8               488025              2453 ns/op               0 B/op          0 allocs/op
 ```
+From the results, we could learn that the performance of the benchmark ``range_value_copy`` is much lower than the ``range_value_index``. The reason is every element is copied to the iteration variable ``v`` in the benchmark ``range_value_copy``, and the copy cost is not small. The other benchmark avoid the copies.
