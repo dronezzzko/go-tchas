@@ -8,6 +8,7 @@ List of interesting gotchas in Go.
     * [Comparable slices](#comparable-slices)
     * [NaN != NaN, Inf == Inf](#nan--nan-inf--inf)
     * [bytes.Equal and reflect.DeepEqual give different results](#bytesequal-and-reflectdeepequal-give-different-results)
+* [Performance]
 
 ## Dark Corners
 ### Pointer of composite literals
