@@ -7,7 +7,7 @@ List of interesting gotchas in Go.
     * [Copy slice without using copy() function](#copy-slice-without-using-copy-function)
     * [Comparable slices](#comparable-slices)
     * [NaN != NaN, Inf == Inf](#nan--nan-inf--inf)
-    * [bytes.Equal and reflect.DeepEqual give different results]()
+    * [bytes.Equal and reflect.DeepEqual give different results](#bytesequal-and-reflectdeepequal-give-different-results)
 
 ## Dark Corners
 ### Pointer of composite literals
