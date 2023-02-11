@@ -132,6 +132,7 @@ func main() {
 ## Performance
 ### for-range loop
 With each iteration of a slice, the address of a local variable is the same. Only value of the local variable is changing.
+
 Several examples below show the costs of copying some large values:
 ```go
 package copybench
@@ -173,6 +174,7 @@ func BenchmarkRangeValueCopy(b *testing.B) {
 }
 ```
 Output:
+
 ```terminal
 BenchmarkRangeValueCopy/range_value_copy-8                 26079             43284 ns/op               0 B/op          0 allocs/op
 BenchmarkRangeValueCopy/range_value_index-8               488025              2453 ns/op               0 B/op          0 allocs/op
