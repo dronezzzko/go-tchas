@@ -85,7 +85,7 @@ func main() {
 ```
 
 ### Comparable slices
-As we know in Go, slices are incomparable. Well... Since Go 1.17, if the elements of two slices are comparable and the lengths of the two slices are equal and known at coding time, then we could this:
+As we know in Go, slices are incomparable. Well... Since Go 1.17, if the elements of two slices are comparable and the lengths of the two slices are equal and known at coding time, then we could do this:
 ```go
 package main
 
