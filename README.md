@@ -186,6 +186,15 @@ From the results, we could learn that the performance of the benchmark ``range_v
 ### zero-sized type (ZST)
 The empty struct ``struct{}`` and arrays of length zero (like ``[0]int``) take up no memory, as do structs and arrays comprised entirely of zero-sized types.
 
+In Go's standard library zero-sized types are widely used. For instance, in [io/io.go](https://github.com/golang/go/blob/master/src/io/io.go#L622):
+```go
+// Discard is a Writer on which all Write calls succeed
+// without doing anything.
+var Discard Writer = discard{}
+
+type discard struct{} 
+```
+
 So, can use a ZST as a map value type to save space rather than using ``map[string]bool``
 ```go
 var set = make(map[string]struct{})
