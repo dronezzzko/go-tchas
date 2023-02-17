@@ -10,7 +10,7 @@ List of interesting gotchas in Go.
     * [bytes.Equal and reflect.DeepEqual give different results](#bytesequal-and-reflectdeepequal-give-different-results)
 * [Performance](#performance)
     * [for-range loop](#for-range-loop)
-    * [zero-sized type](#zero-sized-type)
+    * [zero-sized type](#zero-sized-type-zst)
 
 ## Dark Corners
 ### Pointer of composite literals
