@@ -10,6 +10,7 @@ List of interesting gotchas in Go.
     * [bytes.Equal and reflect.DeepEqual give different results](#bytesequal-and-reflectdeepequal-give-different-results)
 * [Performance](#performance)
     * [for-range loop](#for-range-loop)
+    * [zero-sized type](#zero-sized-type)
 
 ## Dark Corners
 ### Pointer of composite literals
@@ -181,3 +182,10 @@ BenchmarkRangeValueCopy/range_value_copy-8                 26079             432
 BenchmarkRangeValueCopy/range_value_index-8               488025              2453 ns/op
 ```
 From the results, we could learn that the performance of the benchmark ``range_value_copy`` is much lower than the ``range_value_index``. The reason is every element is copied to the iteration variable ``v`` in the benchmark ``range_value_copy``, and the copy cost is not small. The other benchmark avoid the copies.
+
+### zero-sized type (ZST)
+The empty struct ``struct{}`` and arrays of length zero (like ``[0]int``) take up no memory, as do structs and arrays comprised entirely of zero-sized types.
+You can also use a ZST as a map value type to save space rather than using ``map[string]bool``
+```go
+var set = make(map[string]struct{})
+```
