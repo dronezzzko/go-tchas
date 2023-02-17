@@ -195,7 +195,7 @@ var Discard Writer = discard{}
 type discard struct{} 
 ```
 
-So, can use a ZST as a map value type to save space rather than using ``map[string]bool``
+We also can use a ZST as a map value type to save space rather than using ``map[string]bool``
 ```go
 var set = make(map[string]struct{})
 ```
