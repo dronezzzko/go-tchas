@@ -11,6 +11,7 @@ List of interesting gotchas in Go.
 * [Performance](#performance)
     * [for-range loop](#for-range-loop)
     * [zero-sized type](#zero-sized-type-zst)
+    * [Strings comparison](strings-comparison)
 
 ## Dark Corners
 ### Pointer of composite literals
@@ -198,4 +199,33 @@ type discard struct{}
 We also can use a ZST as a map value type to save space rather than using ``map[string]bool``
 ```go
 var set = make(map[string]struct{})
+```
+### Strings comparison
+Prefer using ``strings.EqualFold`` when dealing with strings comparison over ``strings.ToLower``
+```go
+package main
+
+import (
+	"strings"
+	"testing"
+)
+
+func BenchmarkToLower(b *testing.B) {
+	s1, s2 := "Google", "google"
+	for i := 0; i < b.N; i++ {
+		_ = strings.ToLower(s1) == strings.ToLower(s2)
+	}
+}
+
+func BenchmarkEqualFold(b *testing.B) {
+	s1, s2 := "Google", "google"
+	for i := 0; i < b.N; i++ {
+		_ = strings.EqualFold(s1, s2)
+	}
+}
+```
+Results:
+```terminal
+BenchmarkToLower-8      35134854                33.98 ns/op            8 B/op          1 allocs/op
+BenchmarkEqualFold-8    93860608                12.55 ns/op            0 B/op          0 allocs/op
 ```
