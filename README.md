@@ -11,7 +11,7 @@ List of interesting gotchas in Go.
 * [Performance](#performance)
     * [for-range loop](#for-range-loop)
     * [zero-sized type](#zero-sized-type-zst)
-    * [Strings comparison](strings-comparison)
+    * [Strings comparison](#strings-comparison)
 
 ## Dark Corners
 ### Pointer of composite literals
