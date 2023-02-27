@@ -1,5 +1,5 @@
 # Go-tchas
-List of interesting gotchas in Go.
+List of interesting gotchas in Go you probably don't know.
 
 * [Dark Corners](#dark-corners)
     * [Pointer of composite literals](#pointer-of-composite-literals)
