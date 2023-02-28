@@ -13,6 +13,7 @@ List of interesting gotchas in Go you probably don't know.
     * [zero-sized type](#zero-sized-type-zst)
     * [Strings comparison](#strings-comparison)
     * [Undocumented ``memclr`` optimization](#undocumented-memclr-optimization)
+    * [Incrementing a map](#incrementing-a-map)
 
 ## Dark Corners
 ### Pointer of composite literals
@@ -279,10 +280,12 @@ func Benchmark_addition(b *testing.B) {
 	}
 }
 ```
+
 The results:
 ```terminal
 Benchmark_inc-8         221115585                5.242 ns/op
 Benchmark_plus-8        229422019                5.231 ns/op
 Benchmark_add-8         190731280                6.282 ns/op
 ```
+
 The reason is that the key is hashed twice.
