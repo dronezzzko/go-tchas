@@ -234,7 +234,8 @@ BenchmarkEqualFold-8    93860608                12.55 ns/op            0 B/op   
 ### Undocumented ``memclr`` optimization
 
 Loops that zero arrays or slices are replaced by Go with single call of the ``memclr`` function.
-So, this 
+
+So, this:
 
 ```go
 s := make([]int, 20)
@@ -243,7 +244,7 @@ for i := range s {
 }
 ```
 
-Replaced wtih this in a compile time:
+Replaced with this in a compile time:
 ```go
 runtime.memclrNoHeapPointers
 ```
