@@ -230,7 +230,7 @@ BenchmarkToLower-8      35134854                33.98 ns/op            8 B/op   
 BenchmarkEqualFold-8    93860608                12.55 ns/op            0 B/op          0 allocs/op
 ```
 
-###Undocumented ``memclr`` optimization
+### Undocumented ``memclr`` optimization
 Loops that zero array or slices are replaced by Go with single call of the ``memclr`` function.
 So, this 
 ```go
