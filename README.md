@@ -251,3 +251,7 @@ runtime.memclrNoHeapPointers
 The ``memclr`` takes a pointer to the start of the memory block and the length of the block as arguments.
 The ``memclr`` function is used by the garbage collector to clear the memory of objects that are no longer in use.
 
+That can be confirmed by running the command:
+```terminal
+go tool compile -S main.go
+```
