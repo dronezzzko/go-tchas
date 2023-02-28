@@ -231,16 +231,22 @@ BenchmarkEqualFold-8    93860608                12.55 ns/op            0 B/op   
 ```
 
 ### Undocumented ``memclr`` optimization
+
 Loops that zero array or slices are replaced by Go with single call of the ``memclr`` function.
 So, this 
+
 ```go
 s := make([]int, 20)
 for i := range s {
 	s[i] = 0
 }
 ```
+
 Replaced wtih this in a compile time:
-``runtime.memclrNoHeapPointers``
+```go
+runtime.memclrNoHeapPointers
+```
+
 ``memclr`` takes a pointer to the start of the memory block and the length of the block as arguments.
 The ``memclr`` function is used by the garbage collector to clear the memory of objects that are no longer in use.
 
