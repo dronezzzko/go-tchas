@@ -12,6 +12,7 @@ List of interesting gotchas in Go you probably don't know.
     * [for-range loop](#for-range-loop)
     * [zero-sized type](#zero-sized-type-zst)
     * [Strings comparison](#strings-comparison)
+    * [Undocumented ``memclr`` optimization](#undocumented-memclr-optimization)
 
 ## Dark Corners
 ### Pointer of composite literals
@@ -247,6 +248,6 @@ Replaced wtih this in a compile time:
 runtime.memclrNoHeapPointers
 ```
 
-``memclr`` takes a pointer to the start of the memory block and the length of the block as arguments.
+The ``memclr`` takes a pointer to the start of the memory block and the length of the block as arguments.
 The ``memclr`` function is used by the garbage collector to clear the memory of objects that are no longer in use.
 
