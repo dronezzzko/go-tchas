@@ -260,6 +260,7 @@ go tool compile -S main.go
 ### Incrementing a map
 
 The statement ``aMap[key] = aMap[key] + 1`` is slower than ``aMap[key]++`` or ``aMap[key] += 1``
+
 Here's the benchmark:
 ```go
 var m = map[int]int{}
