@@ -244,7 +244,7 @@ for i := range s {
 }
 ```
 
-Replaced with this in a compile time:
+Replaced with this during a compile time:
 ```go
 runtime.memclrNoHeapPointers
 ```
