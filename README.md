@@ -256,3 +256,33 @@ That can be confirmed by running the command:
 ```terminal
 go tool compile -S main.go
 ```
+### Incrementing a map
+
+The statement ``aMap[key] = aMap[key] + 1`` is slower than ``aMap[key]++`` or ``aMap[key] += 1``
+Here's the benchmark:
+```go
+var m = map[int]int{}
+
+func Benchmark_inc(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		m[99]++
+	}
+}
+func Benchmark_plusone(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		m[99] += 1
+	}
+}
+func Benchmark_addition(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		m[99] = m[99] + 1
+	}
+}
+```
+The results:
+```terminal
+Benchmark_inc-8         221115585                5.242 ns/op
+Benchmark_plus-8        229422019                5.231 ns/op
+Benchmark_add-8         190731280                6.282 ns/op
+```
+The reason is that the key is hashed twice.
